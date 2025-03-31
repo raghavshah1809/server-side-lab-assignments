@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive JavaScript Assignment</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input {
+            padding: 8px;
+            margin: 5px 0;
+            width: 95%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #hoverDiv {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8d7da;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 0.8em;
+        }
+        #chatbox {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive JavaScript Assignment</h1>
+
+    <section id="task1A">
+        <h2>1A: BMI Calculator</h2>
+        <input type="number" id="weight" placeholder="Enter weight (kg)">
+        <input type="number" id="height" placeholder="Enter height (cm)">
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <p id="bmiResult"></p>
+    </section>
+
+    <section id="task1B">
+        <h2>1B: Pop-up Alerts</h2>
+        <button onclick="showAlert()">Show Alert</button>
+        <button onclick="showConfirm()">Show Confirm</button>
+        <button onclick="showPrompt()">Show Prompt</button>
+        <p id="promptResult"></p>
+    </section>
+
+    <section id="task1C">
+        <h2>1C: Event Handling</h2>
+        <button onclick="changeText()">Change Text</button>
+        <p id="changeableText">Click the button to change this text.</p>
+        <div id="hoverDiv" onmouseover="hoverEffect(true)" onmouseout="hoverEffect(false)">
+            Hover over me!
+        </div>
+        <ul id="dynamicList">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+        <input type="text" id="newItem" placeholder="Add new item">
+        <button onclick="addItem()">Add Item</button>
+    </section>
+
+    <section id="task1D">
+        <h2>1D: Form Validation</h2>
+        <form id="registrationForm" onsubmit="validateForm(event)">
+            <input type="text" id="name" placeholder="Enter name">
+            <span id="nameError" class="error"></span><br>
+            <input type="email" id="email" placeholder="Enter email">
+            <span id="emailError" class="error"></span><br>
+            <input type="tel" id="phone" placeholder="Enter phone">
+            <span id="phoneError" class="error"></span><br>
+            <input type="password" id="password" placeholder="Enter password">
+            <span id="passwordError" class="error"></span><br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="task1E">
+        <h2>1E: Weather Fetch</h2>
+        <button onclick="fetchWeather()">Fetch Weather</button>
+        <p id="weatherResult"></p>
+    </section>
+
+    <section id="todoList">
+        <h2>To-Do List</h2>
+        <input type="text" id="todoInput" placeholder="Add a new task">
+        <button onclick="addTodo()">Add Task</button>
+        <ul id="todoItems"></ul>
+    </section>
+
+    <section id="chatbot">
+        <h2>Simple Chatbot</h2>
+        <div id="chatbox">
+            <p>Chatbot: Namaste! How can I assist you today?</p>
+        </div>
+        <input type="text" id="chatInput" placeholder="Type your message">
+        <button onclick="sendMessage()">Send</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
