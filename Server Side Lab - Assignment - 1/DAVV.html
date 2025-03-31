@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IET DAVV - Excellence in Engineering</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #800000;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo img {
+            width: 80px;
+            vertical-align: middle;
+        }
+        .logo h1, .logo h2 {
+            display: inline;
+            margin-left: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url("campus1.jpg") no-repeat center center/cover;
+            color: white;
+            padding: 120px 20px;
+            text-shadow: 2px 2px 5px black;
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: white;
+            color: #800000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #ffd700;
+            color: #800000;
+        }
+        section {
+            padding: 50px;
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #800000;
+        }
+        .departments, .why-us {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .box {
+            width: 250px;
+            padding: 20px;
+            background: #f4f4f4;
+            margin: 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .box:hover {
+            background: #ffd700;
+            transform: scale(1.05);
+        }
+        .carousel {
+            position: relative;
+            width: 80%;
+            margin: 30px auto;
+            overflow: hidden;
+            border: 5px solid #800000;
+            border-radius: 10px;
+        }
+        .slides img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .slides img.active {
+            display: block;
+        }
+        footer {
+            background-color: #800000;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Devi_Ahilya_Vishwavidyalaya_Logo.png" alt="IET Logo">
+            <h1>IET DAVV</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Admission</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to IET DAVV</h1>
+        <p>Excellence in Engineering & Technology Education</p>
+        <a href="#" class="btn">Explore More</a>
+    </section>
+
+    <section>
+        <h2>About Us</h2>
+        <p>Institute of Engineering & Technology (IET) DAVV is a premier engineering institute known for its academic excellence and research-driven approach.</p>
+    </section>
+
+    <section class="carousel">
+        <div class="slides">
+            <img src="placement.jpg" alt="Placement Cell" class="active">
+            <img src="campus1.jpg" alt="Campus View">
+            <img src="library.jpg" alt="Library">
+            <img src="lab.jpg" alt="Laboratory">
+            <img src="event.jpg" alt="College Event">
+        </div>
+    </section>
+
+    <section>
+        <h2>Our Departments</h2>
+        <div class="departments">
+            <div class="box">Computer Science</div>
+            <div class="box">Electronics & Communication</div>
+            <div class="box">Mechanical Engineering</div>
+            <div class="box">Civil Engineering</div>
+            <div class="box">Information Technology</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Why Choose IET DAVV?</h2>
+        <div class="why-us">
+            <div class="box">Ranked Among Top 10 Govt. Engineering Colleges</div>
+            <div class="box">Excellent Placement Record</div>
+            <div class="box">Advanced Research & Innovation</div>
+            <div class="box">Experienced Faculty</div>
+            <div class="box">State-of-the-Art Infrastructure</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Institute of Engineering & Technology, DAVV Indore</p>
+        <p>Contact: iet@davv.ac.in | Phone: +91-731-2462021</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let ci = 0;
+            const slides = document.querySelectorAll(".slides img");
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle("active", i === index);
+                });
+            }
+
+            function nextSlide() {
+                ci = (ci + 1) % slides.length;
+                showSlide(ci);
+            }
+
+            setInterval(nextSlide, 3000);
+            showSlide(ci);
+        });
+    </script>
+</body>
+</html>
